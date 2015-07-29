@@ -1,0 +1,50 @@
+{
+  "name": "Node-Express-Starter-Kit",
+  "version": "0.1.0",
+  "description": "A starter-kit for help in deploying and getting a node app up and running as fast as possible",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha -R spec",
+    "start": "gulp start && node app"
+  },
+  "author": "James Cordeiro",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.13.1",
+    "express-handlebars": "~2.0.1",
+    "handlebars": "~3.0.3",
+    "squel": "~4.0.0",
+    "mysql": "~2.8.0",
+    "node-mysql": "~0.4.2",
+    "body-parser": "~1.13.2"
+  },
+  "devDependencies": {
+    "mocha": "~2.2.5",
+    "chai": "~3.0.0",
+    "sinon": "~1.15.4",
+    "gulp": "~3.9.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-clean": "~0.3.1",
+    "gulp-concat": "~2.6.0",
+    "gulp-uglify": "~1.2.0",
+    "gulp-minify-css": "~1.2.0",
+    "gulp-cache": "~0.2.10",
+    "gulp-notify": "~2.2.0",
+    "gulp-imagemin": "~2.3.0",
+    "gulp-jshint": "~1.11.2",
+    "gulp-sass": "~2.0.3",
+    "gulp-ruby-sass": "~1.0.5",
+    "gulp-livereload": "~3.8.0",
+    "tiny-lr": "~0.1.6",
+    "gulp-connect": "~2.2.0",
+    "gulp-watch": "~4.2.4",
+    "browser-sync": "~2.7.13",
+    "gulp-nodemon": "~2.0.3",
+    "gulp-order": "~1.1.1",
+    "run-sequence": "~1.1.1",
+    "async": "~1.4.0",
+    "db-migrate": "~0.9.18",
+    "yargs": "~3.15.0",
+    "gulp-if-else": "~1.0.3"
+  }
+}

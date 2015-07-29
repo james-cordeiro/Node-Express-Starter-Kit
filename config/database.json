@@ -1,0 +1,40 @@
+{
+    
+    "dev": {
+
+    	"port"						:		"3306",
+    	"host"						: 		"localhost",
+    	"user"						: 		"",
+    	"password" 					: 		"",
+    	"database"					: 		"",
+    	"driver"					: 		"mysql",
+    	"multipleStatements"		: 		true
+
+  	},
+
+
+  	"stag": {
+
+    	"port"						:		"3306",
+    	"host"						: 		"localhost",
+    	"user"						: 		"",
+    	"password" 					: 		"",
+    	"database"					: 		"",
+    	"driver"					: 		"mysql",
+    	"multipleStatements"		: 		true
+
+  	},
+
+  	"prod": {
+
+    	"port"						:		"3306",
+    	"host"						: 		"localhost",
+    	"user"						: 		"",
+    	"password" 					: 		"",
+    	"database"					: 		"",
+    	"driver"					: 		"mysql",
+    	"multipleStatements"		: 		true
+
+  	}
+
+}
