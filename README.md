@@ -53,10 +53,16 @@ Once you have cloned this repo and/or copied over the files into your own direct
 
 By default Gulp will run the production environment set-up which will minify CSS & JS files. The development environment will initialise Nodemon and BrowserSync. No sourcemaps are generated but the CSS and JS are not minified. 
 
-Run the default build:
+Run the default dev build:
 
 ```
 	$	gulp
+```
+
+Run the default dev build under the dev environment:
+
+```
+	$	gulp --env dev
 ```
 
 Run the production build:
