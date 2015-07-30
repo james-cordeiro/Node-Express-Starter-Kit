@@ -74,8 +74,9 @@ Run the production build:
 
 ##### Gulp Options
 
-	__--env__ *[option]* **Set** the environment of the running node build. e.g. --env dev
-		Available options: prod - production, stag - staging, dev - development.
+> __--env [option]__ Set the environment of the running node build. e.g. `$ ... --env dev`
+
+> Available options: prod - production, stag - staging, dev - development.
 
 
 #### db-migrate
