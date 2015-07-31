@@ -24,7 +24,7 @@ var paths = {
     },
     config = {};
 
-gulp.task('browser-sync', function(){
+gulp.task('browser-sync', ['set-up'], function(){
     return browserSync.init(null, {
         proxy: 'http://localhost:' + config.server.port,
         files: [paths.dest + '**/*.*'],
@@ -35,7 +35,7 @@ gulp.task('browser-sync', function(){
 
 });
 
-gulp.task('nodemon', function (cb) {
+gulp.task('nodemon', ['set-up'], function (cb) {
 
     var started = false;
 
@@ -54,7 +54,7 @@ gulp.task('nodemon', function (cb) {
 });
 
 // Styles
-gulp.task('styles', function() {
+gulp.task('styles', ['set-up'], function() {
     return gulp.src(paths.src + 'styles/components/*.scss')
         .pipe(sass({ style: 'expanded' })).on('error', function(err){ console.log(err.message); })
         .pipe(gulp.dest(paths.dest + 'styles')).on('error', function(err){ console.log(err.message); })
@@ -65,7 +65,7 @@ gulp.task('styles', function() {
 });
 
 // Fonts CSS
-gulp.task('fonts-css', function() {
+gulp.task('fonts-css', ['set-up'], function() {
     return gulp.src(paths.src + 'styles/fonts/**/*.css')
         .pipe(gulp.dest(paths.dest + 'styles/fonts')).on('error', function(err){ console.log(err.message); })
         .pipe(rename({ suffix: '.min' })).on('error', function(err){ console.log(err.message); })
@@ -75,14 +75,14 @@ gulp.task('fonts-css', function() {
 });
 
 // Fonts
-gulp.task('fonts', function() {
+gulp.task('fonts', ['set-up'], function() {
     return gulp.src([paths.src + 'styles/fonts/**/*.eot', paths.src + 'styles/fonts/**/*.svg', paths.src + 'styles/fonts/**/*.ttf', paths.src + 'styles/fonts/**/*.woff', paths.src + 'styles/fonts/**/**/*'])
         .pipe(gulp.dest(paths.dest + 'styles/fonts')).on('error', function(err){ console.log(err.message); })
         .pipe(browserSync.stream()).on('error', function(err){ console.log(err.message); });
 });
 
 // Scripts
-gulp.task('scripts', function() {
+gulp.task('scripts', ['set-up'], function() {
     return gulp.src([
         paths.src + 'scripts/**/*.js',
         paths.src + 'scripts/*.js'
@@ -106,7 +106,7 @@ gulp.task('scripts', function() {
 });
 
 // Images
-gulp.task('images', function() {
+gulp.task('images', ['set-up'], function() {
     return gulp.src(paths.src + 'images/**/*.(jpeg|jpg|png|gif)')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))).on('error', function(err){ console.log(err.message); })
         .pipe(gulp.dest(paths.dest + 'images')).on('error', function(err){ console.log(err.message); })
@@ -114,13 +114,13 @@ gulp.task('images', function() {
 });
 
 // Clean
-gulp.task('clean', function() {
+gulp.task('clean', ['set-up'], function() {
     return gulp.src([paths.dest + 'styles', paths.dest + 'scripts', paths.dest + 'images'], {read: false})
         .pipe(clean()).on('error', function(err){ console.log(err.message); });
 });
 
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', ['set-up'], function() {
     
     // Watch .scss files
     gulp.watch(paths.src + 'styles/components/**/*.scss', function(event) {
