@@ -107,7 +107,7 @@ gulp.task('scripts', ['set-up'], function() {
 
 // Images
 gulp.task('images', ['set-up'], function() {
-    return gulp.src(paths.src + 'images/**/*.(jpeg|jpg|png|gif)')
+    return gulp.src([paths.src + 'images/**/*.jpeg', paths.src + 'images/**/*.jpg', paths.src + 'images/**/*.png', paths.src + 'images/**/*.gif'])
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))).on('error', function(err){ console.log(err.message); })
         .pipe(gulp.dest(paths.dest + 'images')).on('error', function(err){ console.log(err.message); })
         .pipe(browserSync.stream()).on('error', function(err){ console.log(err.message); });
